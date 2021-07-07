@@ -2,11 +2,11 @@
 Vue.component('podcast-post', {
   props: ['title', 'cover', 'intro', 'url', 'latest'],
   template: `
-    <a :href="url" class="w-full bg-white md:flex md:h-48 rounded">
-      <div class="article-mast py-12 md:w-1/2 bg-cover bg-center text-white text-opacity-75 rounded-t md:rounded-l md:rounded-r-none flex" :style="'background-image: url(img/podcasts/'+ cover +')'">
+    <a :href="url" class="w-full bg-white rounded transition-all duration-200 md:(flex h-48) hover:(transform rotate-2 ring(4 blue-400)) focus:(transform rotate-2 ring(4 blue-400))">
+      <div class="article-mast py-12 bg-cover bg-center text-white text-opacity-75 rounded-t flex md:(w-1/2 rounded-l rounded-r-none)" :style="'background-image: url(img/podcasts/'+ cover +')'">
         <i class="fa fa-play-circle-o fa-4x m-auto" role="presentation" aria-label="Play"></i>
       </div>
-      <div class="article-info p-8 md:w-1/2 md:h-full self-center overflow-y-scroll">
+      <div class="article-info p-8 self-center overflow-y-scroll md:(w-1/2 h-full)">
         <h3 v-if="latest" class="mb-2 font-bold text-xl text-yellow-500 uppercase">Latest Episode</h3>
         <p class="leading-tight"><b>{{ title }}</b></p>
         <small v-if="intro" class="pt-2 block text-gray-600 text-opacity-50 leading-tight">{{ intro }}</small>
